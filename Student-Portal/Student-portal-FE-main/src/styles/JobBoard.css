@@ -1,0 +1,219 @@
+/* styles/JobBoard.css */
+
+.jobboard-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Dark gray for general text */
+  padding: 20px;
+  max-width: 1200px; /* Wider max width for more columns */
+  margin: 40px auto; /* Center the container */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft, prominent shadow */
+  animation: fadeIn 0.8s ease-out; /* Fade-in animation for the whole container */
+}
+
+.jobboard-heading {
+  color: #015774; /* Deep blue for the main heading */
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.jobboard-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 150px; /* Underline for the heading */
+  height: 4px;
+  background-color: #badba2; /* Accent color for the underline */
+  border-radius: 2px;
+}
+
+/* Error message styling */
+.jobboard-error-message {
+  color: #d9534f; /* Standard error red */
+  background-color: rgba(255, 230, 230, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.no-jobs-message {
+  text-align: center;
+  font-size: 1.3em;
+  color: #777;
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Space between job cards */
+  padding: 20px;
+}
+
+.job-card {
+  background-color: #f8fbfd; /* Very light blue background for each card */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+  display: flex;
+  flex-direction: column; /* Stack content */
+}
+
+.job-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.job-info {
+  padding: 20px;
+  flex-grow: 1; /* Allows info section to expand and push button down */
+  display: flex;
+  flex-direction: column;
+}
+
+.job-role {
+  color: #015774; /* Deep blue for job roles */
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #e6f2f7; /* Light separator under title */
+  padding-bottom: 8px;
+}
+
+.job-company {
+  color: #555; /* Slightly softer color for company */
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-meta {
+  font-size: 0.95em;
+  color: #777; /* Lighter color for meta info */
+  margin-bottom: 8px; /* Space between meta lines */
+}
+
+.job-meta strong {
+  color: #015774; /* Highlight labels like Location/Contact */
+  margin-right: 5px;
+}
+
+/* Delete Button (reused for consistency) */
+.delete-button {
+  background-color: #dc3545; /* Red for delete button */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 20px; /* Space above the button */
+  align-self: flex-start; /* Align button to start within its flex container */
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .jobboard-container {
+    padding: 15px;
+    margin: 30px auto;
+  }
+  .jobboard-heading {
+    font-size: 2.4em;
+    margin-bottom: 25px;
+  }
+  .job-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjust min-width */
+    gap: 25px;
+    padding: 15px;
+  }
+  .job-role {
+    font-size: 1.6em;
+  }
+  .job-company {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobboard-heading {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .job-list {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    gap: 20px;
+    padding: 10px;
+  }
+  .job-card {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+  .job-info {
+    padding: 15px;
+    align-items: center;
+  }
+  .job-role {
+    font-size: 1.4em;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+  }
+  .job-company {
+    font-size: 0.95em;
+  }
+  .delete-button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .jobboard-container {
+    padding: 10px;
+    margin: 20px auto;
+  }
+  .jobboard-heading {
+    font-size: 1.8em;
+  }
+  .job-info {
+    padding: 10px;
+  }
+  .job-role {
+    font-size: 1.3em;
+  }
+}

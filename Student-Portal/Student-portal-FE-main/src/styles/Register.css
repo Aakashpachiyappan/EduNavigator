@@ -1,0 +1,101 @@
+/* Register.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.registerform {
+  height: 100vh;
+  width: 100vw;
+  background-color: white; /* Changed to a solid blue background to match theme */
+  /* Removed background-image as local paths don't work in Canvas and solid color matches theme */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centered vertically */
+  align-items: center; /* Centered horizontally */
+  /* backdrop-filter: brightness(0.85); */
+}
+
+.registerheading {
+  font-size: 2.5rem;
+  color: var(--blue-600);/* Changed heading color to white for better contrast on blue */
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.95); /* Keep form background white for contrast */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  max-width: 90%; /* Added max-width for responsiveness */
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.registerinput {
+  width: 100%;
+  padding: 12px 12px 12px 12px;
+  font-size: 1rem;
+  border: 1px solid #aaddff; /* Lighter blue border */
+  border-radius: 8px;
+  background: transparent;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.registerinput:focus {
+  border-color: #2980b9; /* Darker blue on focus */
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.3); /* Blue glow on focus */
+}
+
+label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 1rem;
+  color: #777;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.registerinput:focus + label,
+.active {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  background: #ffffff; /* Keep label background white when active */
+  padding: 0 4px;
+  color: #2980b9; /* Darker blue for active label */
+  font-weight: 500;
+}
+
+.submitbutton {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db; /* Blue background for button */
+  color: #ffffff; /* White text for button */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submitbutton:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}

@@ -1,0 +1,133 @@
+/* styles/StudentDashboard.css */
+
+.dashboard-container {
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Dark gray for general text for good readability */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for the content card */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft, professional shadow */
+  padding: 40px;
+  max-width: 1600px; /* Constrain width for a focused layout */
+  margin: 50px auto; /* Center the dashboard horizontally with top/bottom margin */
+  text-align: left; /* Align text to the left within the card */
+  animation: fadeIn 0.8s ease-out; /* Fade-in animation for the dashboard card */
+}
+
+.dashboard-heading {
+  color: #015774; /* A deep blue for the main heading */
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  text-align: center; /* Center the main heading */
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.dashboard-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100px; /* Underline for the heading */
+  height: 4px;
+  background-color: #badba2; /* Accent color for the underline */
+  border-radius: 2px;
+}
+
+.dashboard-info-group {
+  margin-bottom: 20px; /* Space between each information line */
+  padding-bottom: 10px; /* Small padding at the bottom of each group */
+  border-bottom: 1px solid #eee; /* Light separator line for each info */
+}
+
+.dashboard-info-group:last-child {
+  border-bottom: none; /* No border for the last item */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.dashboard-info-group p {
+  margin: 0; /* Remove default paragraph margins */
+  font-size: 1.15em; /* Slightly larger text for information */
+  line-height: 1.6;
+  color: #555; /* Slightly softer color for the values */
+}
+
+.dashboard-info-group strong {
+  color: #015774; /* Bold labels in the main theme color */
+  min-width: 120px; /* Give strong tags a minimum width for alignment */
+  display: inline-block; /* Allows min-width to work */
+  margin-right: 10px; /* Space between label and value */
+}
+
+/* Specific styling for lists if they grow more complex */
+.dashboard-info-group ul {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+    display: inline; /* Keep items on the same line if possible */
+}
+
+.dashboard-info-group ul li {
+    display: inline-block; /* Display list items inline */
+    margin-right: 8px; /* Space between items */
+    background-color: #e6f2f7; /* Light background for tags/items */
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #015774;
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 30px;
+    margin: 30px auto;
+  }
+  .dashboard-heading {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+  .dashboard-info-group p {
+    font-size: 1.05em;
+  }
+  .dashboard-info-group strong {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+  }
+  .dashboard-heading {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  .dashboard-info-group p {
+    font-size: 0.95em;
+  }
+  .dashboard-info-group strong {
+    display: block; /* Stack label and value on small screens */
+    margin-bottom: 5px;
+    min-width: unset;
+  }
+  .dashboard-info-group ul li {
+      font-size: 0.9em;
+  }
+}

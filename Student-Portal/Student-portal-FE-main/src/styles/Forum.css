@@ -1,0 +1,192 @@
+/* styles/Forum.css */
+
+.forum-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Dark gray for general text */
+  padding: 20px;
+  width: 100%;
+   
+  margin: 40px auto; /* Center the forum container */
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft, prominent shadow */
+  animation: fadeIn 0.8s ease-out; /* Fade-in animation for the whole forum */
+}
+
+.forum-heading {
+  color: #015774; /* Deep blue for the main heading */
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.forum-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 120px; /* Underline for the heading */
+  height: 4px;
+  background-color: #badba2; /* Accent color for the underline */
+  border-radius: 2px;
+}
+
+.forum-error-message {
+  color: #dc3545; /* Red for error messages */
+  background-color: rgba(255, 230, 230, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out; /* Fade in animation for error message */
+}
+
+.post-card {
+  background-color: #f8fbfd; /* Very light blue background for each post */
+  border: 1px solid #e0e0e0; /* Light border around each post */
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px; /* Space between posts */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for each post */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+}
+
+.post-card:hover {
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow on hover */
+}
+
+.post-title {
+  color: #015774; /* Deep blue for post titles */
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6f2f7; /* Light separator under title */
+  padding-bottom: 8px;
+}
+
+.post-content {
+  color: #555; /* Slightly softer color for post content */
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.post-meta {
+  font-size: 0.95em;
+  color: #777; /* Lighter color for meta info */
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between; /* Space out author and delete button */
+  align-items: center;
+}
+
+.post-meta strong {
+  color: #015774; /* Highlight 'Posted by' label */
+  margin-right: 5px;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Red for delete button */
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.no-posts-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #777;
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Animations (re-used for consistency) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .forum-container {
+    padding: 15px;
+    margin: 20px auto;
+  }
+  .forum-heading {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+  .post-card {
+    padding: 20px;
+  }
+  .post-title {
+    font-size: 1.5em;
+  }
+  .post-content {
+    font-size: 1em;
+  }
+  .post-meta {
+    flex-direction: column; /* Stack meta info on small screens */
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .delete-button {
+    width: 100%; /* Full width button on small screens */
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .forum-heading {
+    font-size: 1.8em;
+  }
+  .post-card {
+    padding: 15px;
+  }
+  .post-title {
+    font-size: 1.3em;
+  }
+  .post-content {
+    font-size: 0.95em;
+  }
+  .no-posts-message {
+    padding: 30px 15px;
+    font-size: 1em;
+  }
+}

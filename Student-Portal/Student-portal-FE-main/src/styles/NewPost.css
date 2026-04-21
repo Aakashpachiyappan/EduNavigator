@@ -1,0 +1,192 @@
+/* styles/NewPost.css */
+
+.postform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Ensures the form is centered vertically in the available space */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.postheading {
+  color: #015774; /* Deep blue for headings */
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.8s ease-out; /* Animation for the heading */
+}
+
+.post-form {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form elements */
+  max-width: 600px; /* Wider max-width for content */
+  width: 100%;
+  animation: fadeInUp 0.8s ease-out; /* Animation for the form container */
+}
+
+/* Error message styling */
+.post-error-message {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d9534f; /* Standard error red */
+  background-color: rgba(255, 230, 230, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-out; /* Fade in animation for error message */
+}
+
+/* New: Input Group for Floating Labels (re-used from Register/Login) */
+.input-group {
+  position: relative; /* Essential for positioning the label */
+  margin-bottom: 10px; /* Adjust spacing between input groups */
+}
+
+.postinput {
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0; /* Light gray border */
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  outline: none; /* Remove default outline */
+  width: calc(100% - 40px); /* Adjust width to account for padding */
+  box-sizing: border-box; /* Include padding in width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus */
+  padding-top: 25px; /* Add extra top padding for the floating label to move into */
+}
+
+/* Specific styling for the textarea */
+.textarea-content {
+  min-height: 150px; /* Make textarea taller */
+  resize: vertical; /* Allow vertical resizing */
+  padding-top: 25px; /* Keep consistent padding-top for floating label */
+}
+
+
+.postinput:focus {
+  border-color: #015774; /* Highlight border on focus */
+  box-shadow: 0 0 10px rgba(1, 87, 116, 0.3); /* Subtle glow on focus */
+}
+
+/* Styling for the floating label */
+.input-group label {
+  position: absolute;
+  left: 20px; /* Initial horizontal position, matches input padding */
+  top: 18px; /* Initial vertical position, adjusted for new padding-top */
+  color: #999;
+  font-size: 1.1em;
+  pointer-events: none; /* Allows clicks to pass through to the input */
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1; /* Ensure label is above input when not active */
+  background-color: transparent; /* Default transparent */
+  padding: 0 5px; /* Small padding to allow background to appear around text */
+  transform-origin: left top; /* Set transform origin for scaling */
+}
+
+/* When input/textarea is focused OR has content (active class from React) */
+.postinput:focus + label,
+.input-group label.active {
+  top: 0; /* Move label up */
+  font-size: 0.85em; /* Shrink label text */
+  color: #015774; /* Change label color on focus/active */
+  background-color: white; /* **Background for the label** - matches form background */
+  transform: translateY(-50%) translateX(-5px); /* Adjust position for background and centering */
+  z-index: 2; /* Bring label to front */
+}
+
+/* Re-use submit button style from Login/Register */
+.submitbutton {
+  background-color: #015774; /* Blue button */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Button shadow */
+}
+
+.submitbutton:hover {
+  background-color: #004d66; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations (re-used for consistency) */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .postheading {
+    font-size: 2.2em;
+  }
+  .post-form {
+    padding: 30px;
+    gap: 15px;
+    max-width: 90%;
+  }
+  .postinput, .submitbutton {
+    font-size: 1em;
+    padding: 12px 18px;
+  }
+  .textarea-content {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .postheading {
+    font-size: 1.8em;
+  }
+  .post-form {
+    padding: 20px;
+    gap: 15px;
+  }
+  .postinput, .submitbutton {
+    padding: 10px 15px;
+  }
+  .textarea-content {
+    min-height: 100px;
+  }
+}

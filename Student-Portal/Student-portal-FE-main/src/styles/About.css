@@ -1,0 +1,200 @@
+/* styles/About.css */
+
+/* Root variables for colors - Inherited from App.css or defined consistently */
+:root {
+  --blue-500: #3b82f6;
+  --purple-600: #9333ea;
+  --white: #ffffff;
+  --gray-800: #010810;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --blue-100: #dbeafe;
+  --blue-800: #1e40af;
+  --purple-100: #ede9fe;
+  --purple-800: #5b21b6;
+  --green-100: #dcfce7;
+  --green-800: #166534;
+  --yellow-100: #fef9c3;
+  --yellow-800: #92400e;
+  --red-100: #fee2e2;
+  --red-800: #991b1b;
+  --indigo-100: #e0e7ff;
+  --indigo-800: #3730a3;
+  --teal-100: #ccfbf1;
+  --teal-800: #0f766e;
+  --orange-100: #ffedd5;
+  --orange-800: #9a3412;
+  --lime-100: #ecfccb;
+  --lime-800: #3f6212;
+  --blue-600: #2563eb;
+  --green-600: #16a34a;
+}
+
+/* Keyframe animations for a subtle fade-in effect - Consistent with Home.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 1s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+/* About Container - Matched to .home-content */
+.about-container {
+  font-family: 'Inter', sans-serif; /* Use Inter font for consistency */
+  color: var(--gray-800); /* Matched to home-content paragraph color */
+  text-align: center; /* Center the main container content */
+  padding: 2rem; /* Matched to home-content padding */
+  line-height: 1.625; /* Matched to home-content paragraph line-height */
+  /* Matched to home-content max-width */
+  /* Ensure it takes full width within its parent */
+  margin: 40px auto; /* Center the container horizontally with top/bottom margin */
+ 
+  border-radius: 0.75rem; /* Matched to home-content border-radius */
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Matched to home-content shadow */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  transition: transform 0.5s ease-in-out; /* Add transition for hover effect */
+}
+
+
+
+/* Main Heading - Matched to .home-main-heading */
+.about-main-heading {
+  color: var(--blue-800); /* Matched to home-main-heading color */
+  font-size: 2.25rem; /* Matched to home-main-heading font-size */
+  font-weight: 800; /* Matched to home-main-heading font-weight */
+  margin-bottom: 1.5rem; /* Matched to home-main-heading margin-bottom */
+  text-align: center;
+  position: relative;
+  /* Removed padding-bottom and ::after for underline to simplify and match Home.css */
+  text-shadow: none; /* Remove text shadow for consistency */
+}
+
+/* Section Titles - Matched to .home-sub-heading */
+.about-section-title {
+  font-size: 1.5rem; /* Matched to home-sub-heading font-size */
+  font-weight: 700; /* Matched to home-sub-heading font-weight */
+  color: var(--blue-800); /* Matched to home-sub-heading color */
+  margin-top: 2rem; /* Adjusted margin-top for spacing */
+  margin-bottom: 1.5rem; /* Matched to home-sub-heading margin-bottom */
+  padding: 0; /* Remove vertical padding */
+  position: relative;
+  text-shadow: none; /* Remove text shadow for consistency */
+  /* Removed ::after for underline to simplify and match Home.css */
+}
+
+
+/* Paragraphs - Matched to .home-intro-paragraph */
+.about-container p {
+  margin-bottom: 1.5rem; /* Matched to home-intro-paragraph margin-bottom */
+  font-size: 1.125rem; /* Matched to home-intro-paragraph font-size */
+  color: var(--gray-700); /* Matched to home-intro-paragraph color */
+  line-height: 1.625; /* Matched to home-intro-paragraph line-height */
+  text-align: center; /* Center paragraph text */
+  max-width: 100%; /* Allow paragraphs to take full width of container */
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent; /* Remove subtle dark background */
+  padding: 0; /* Remove padding */
+}
+
+/* Feature List (now more like action buttons group) - Matched to .action-buttons-group */
+.about-feature-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2.5rem; /* Adjusted margin-top */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* Matched to action-buttons-group gap */
+}
+
+.about-feature-list li {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-icon {
+  margin-right: 0.5rem; /* Matched to feature-icon margin-right */
+  font-size: 1.25rem; /* Matched to feature-icon font-size */
+  line-height: 1;
+  /* Icon colors will depend on the button's background, similar to feature cards */
+}
+
+/* About Link (now like action buttons) - Matched to .action-button */
+.about-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white); /* Matched to action-button color */
+  text-decoration: none;
+  font-weight: 700; /* Matched to action-button font-weight */
+  padding: 0.75rem 2rem; /* Matched to action-button padding */
+  border-radius: 9999px; /* Matched to action-button border-radius */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Matched to action-button shadow */
+  transition: all 0.3s ease; /* Matched to action-button transition */
+  min-width: unset; /* Remove min-width for flexibility */
+  text-align: center;
+  background-color: var(--blue-600); /* Default button color, can be customized */
+}
+
+.about-link:hover {
+  transform: scale(1.1); /* Matched to action-button hover scale */
+  background-color: #1d4ed8; /* Darker blue on hover */
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.5); /* Matched to action-button focus/hover shadow */
+  color: var(--white); /* Keep text white on hover */
+}
+
+/* Responsive adjustments - Matched to Home.css breakpoints */
+@media (min-width: 640px) { /* sm: breakpoint */
+  /* No specific changes needed here for about-container as it's already fluid */
+  .about-feature-list {
+    flex-direction: row; /* Ensure buttons stay in a row if space allows */
+  }
+  .about-link {
+    width: auto; /* Allow buttons to size naturally */
+  }
+}
+
+@media (min-width: 768px) { /* md: breakpoint */
+  .about-container {
+    padding: 3rem; /* Matched to home-content md:p-12 */
+  }
+  .about-main-heading {
+    font-size: 3rem; /* Matched to home-main-heading md:text-5xl */
+  }
+  .about-section-title {
+    font-size: 1.875rem; /* Matched to home-sub-heading md:text-3xl */
+  }
+  .about-container p {
+    font-size: 1.25rem; /* Matched to home-intro-paragraph md:text-xl */
+  }
+}
+
+@media (min-width: 1024px) { /* lg: breakpoint */
+  /* No specific changes needed here */
+}
